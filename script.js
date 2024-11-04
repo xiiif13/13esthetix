@@ -1,4 +1,3 @@
-const button = document.getElementById("clickButton");
 const welcomeMessage = document.getElementById("welcomeMessage");
 const thanksMessage = document.getElementById("thanksMessage");
 const coolMessage = document.getElementById("coolMessage");
@@ -20,36 +19,30 @@ function showMessageWithFade(message, delay) {
   });
 }
 
-// Function to fade out all messages
 function fadeOutMessages() {
   const allMessages = document.querySelectorAll('.message');
   allMessages.forEach(message => {
-    message.style.opacity = 0; // Start fade out
+    message.style.opacity = 0; // Fade out
     message.style.transform = "translateY(-20px)"; // Move up slightly
   });
 }
 
-// Show the messages first
+// Show the messages and then redirect
 async function displayMessages() {
   await showMessageWithFade(welcomeMessage, 0); // Show welcome message immediately
   await showMessageWithFade(thanksMessage, 500); // Show thanks message after 0.5 seconds
   await showMessageWithFade(coolMessage, 500); // Show cool message after 0.5 seconds
 
-  // Wait for 1.5 seconds after the last message appears before starting to fade out
+  // Wait 1.5 seconds after the last message appears, then fade out
   setTimeout(() => {
     fadeOutMessages();
 
-    // Calculate the duration of fade out (1.5 seconds)
+    // Redirect to the new page after fade-out is complete
     setTimeout(() => {
-      button.style.display = 'block'; // Show the button after fade-out is complete
-      button.classList.add('show'); // Add class to trigger fade-in and scale animation
-    }, 1500); // Wait for the duration of the fade-out effect
-  }, 1500); // Wait 1.5 seconds after the last message appears before starting fade-out
+      window.location.href = "https://www.instagram.com/13esthetix?igsh=enFubGY2eWV5NDds";
+    }, 1500); // Wait 1.5 seconds for fade-out effect to complete
+  }, 1500);
 }
 
 // Start the process of showing messages
 displayMessages();
-
-button.addEventListener("click", () => {
-  window.location.href = "https://www.instagram.com/13esthetix/profilecard/?igsh=MWFyaGRuNjVpazJobw==";
-});

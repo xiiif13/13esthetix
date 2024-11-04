@@ -29,30 +29,4 @@
     margin: 10px 0; /* Space between the messages */
   }
   
-  #clickButton {
-    padding: 60px 120px; /* Large padding for the button */
-    font-size: 64px; /* Large font size */
-    color: #fff;
-    background: linear-gradient(135deg, #007bff, #00bfff); /* Gradient background */
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    opacity: 0; /* Start invisible */
-    transform: scale(0.8); /* Start slightly smaller */
-    margin-top: 40px; /* Space above the button */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transitions */
-    display: none; /* Keep the button hidden initially */
-  }
-  
-  #clickButton.show {
-    display: block; /* Ensure the button is block when shown */
-    opacity: 1; /* Final opacity for fade-in */
-    transform: scale(1); /* Final scale for the button */
-  }
-  
-  #clickButton:hover {
-    transform: scale(1.05); /* Scale up slightly on hover */
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.5); /* Add shadow on hover */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions on hover */
-  }
-  
+ 
